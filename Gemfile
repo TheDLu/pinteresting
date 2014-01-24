@@ -28,6 +28,8 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 # Uses Devise for the authentication for login
 gem 'devise', '~> 3.1.0.rc2'
 
+gem 'paperclip', '~> 3.0'
+
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
