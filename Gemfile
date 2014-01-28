@@ -35,7 +35,7 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
-
+gem 'jquery-ui-rails'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
