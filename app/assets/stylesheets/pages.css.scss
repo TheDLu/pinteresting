@@ -1,3 +1,24 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#containment-wrapper { 
+	width: 500px; 
+	height:500px; 
+	border:2px solid #ccc; 
+	padding: 10px; 
+}
+
+.square { 
+	width: 200px;
+  height: auto; 
+	padding: 0; 
+	float: left; 
+	margin: 0 0px 0px 0;
+	background-color: yellow;
+}
+
+.square img {
+	width: 100%;
+	height: 100%;
+}

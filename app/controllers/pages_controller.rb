@@ -7,5 +7,9 @@ class PagesController < ApplicationController
 
   def project
   end
+
+  def test
+    @pinsMoveable = Pin.all.order("created_at DESC")
+  end
   
 end

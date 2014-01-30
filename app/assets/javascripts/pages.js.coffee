@@ -5,3 +5,10 @@
 $('.carousel').carousel({
 	interval: 1000
 })
+
+$ ->
+	$('.square').draggable().resizable( {
+		minWidth: 200,
+		maxWidth: 350,
+		aspectRatio: true,
+	})
