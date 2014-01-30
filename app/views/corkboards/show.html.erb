@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @corkboard.description %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @corkboard.name %>
+</p>
+
+<%= link_to 'Edit', edit_corkboard_path(@corkboard) %> |
+<%= link_to 'Back', corkboards_path %>

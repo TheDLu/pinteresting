@@ -1,0 +1,29 @@
+<h1>Listing corkboards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @corkboards.each do |corkboard| %>
+      <tr>
+        <td><%= corkboard.description %></td>
+        <td><%= corkboard.name %></td>
+        <td><%= link_to 'Show', corkboard %></td>
+        <td><%= link_to 'Edit', edit_corkboard_path(corkboard) %></td>
+        <td><%= link_to 'Destroy', corkboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Corkboard', new_corkboard_path %>
