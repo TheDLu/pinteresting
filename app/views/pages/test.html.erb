@@ -1,6 +1,6 @@
 <div>
   <% @pinsMoveable.each do |pin| %>
-    <%= content_tag 'div', class: 'square', data: { id: pin.id } do %>
+    <%= content_tag 'div', class: 'square', data: { id: pin.id, p_width: 300} do %>
       <div>
         <%= link_to image_tag(pin.image.url(:medium)), pin %>
     <% end %>

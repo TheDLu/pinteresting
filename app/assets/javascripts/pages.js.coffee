@@ -7,6 +7,7 @@ $('.carousel').carousel({
 })
 
 $ ->
+
 	$('.square')
 
 		.draggable({
@@ -17,13 +18,16 @@ $ ->
 		minWidth: 200,
 		maxWidth: 350,
 		aspectRatio: true,
-	})
+		})
 
 	$('.square').draggable
 		start: (event, ui) ->
-			console.log("start dragging "+ ui.offset.left + " " + ui.offset.top)
+			console.log 'width: ' + $(this).data('p_width')
+			console.log( $(this).data('p_width') + " start dragging "+ ui.offset.left + " " + ui.offset.top)
 
 		stop: (event, ui) ->
+			console.log 'width: ' + $(this).data('p_width')
+
 			xPos = ui.offset.left
 			yPos = ui.offset.top
 
@@ -47,6 +51,12 @@ $ ->
 			wDim = $(ui.element).width()
 			hDim = $(ui.element).height()
 			
-			console.log("stop resizing " + $(ui.element).width() + " " + $(ui.element).height())
+			url = '/pins/' + $(this).data('id') + '?p_height=' + hDim + '&p_width=' + wDim + '&format=js'
 
-			$.post '/pins'
+			console.log url
+
+			$.ajax
+  			url: url
+  			type: "PUT"
+  			beforeSend: (xhr) -> 
+  				xhr.setRequestHeader "X-CSRF-Token", $("meta[name=\"csrf-token\"]").attr("content")
